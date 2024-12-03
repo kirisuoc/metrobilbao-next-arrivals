@@ -7,11 +7,11 @@ stations_file="stations.json"
 columns=3
 
 # Mostrar la lista de estaciones
-echo "		Selecciona la estación de origen:"
-jq -r '.stations[] | "\(.name)"' "$stations_file" | nl | pr -t -${columns}
+echo "Selecciona la estación de origen:"
+jq -r '.stations[] | "\(.name)"' "$stations_file" | nl # | pr -t -${columns} <-- Separar lista en columnas
 
 # Leer la selección del usuario para la estación de origen
-read -p "		Introduce el número de la estación de origen: " origin_index
+read -p "Introduce el número de la estación de origen: " origin_index
 origin_code=$(jq -r ".stations[$((origin_index - 1))].code" "$stations_file")
 origin_name=$(jq -r ".stations[$((origin_index - 1))].name" "$stations_file")
 
@@ -21,25 +21,25 @@ if [ -z "$origin_code" ]; then
 	exit 1
 fi
 
-echo "		Estación de origen seleccionada: $origin_name"
+echo "Estación de origen seleccionada: $origin_name"
 echo
 
 # Mostrar la lista de estaciones para el destino
-echo "		Selecciona la estación de destino:"
-jq -r '.stations[] | "\(.name)"' "$stations_file" | nl | pr -t -${columns}
+echo "Selecciona la estación de destino:"
+jq -r '.stations[] | "\(.name)"' "$stations_file" | nl # | pr -t -${columns} <-- Separar lista en columnas
 
 # Leer la selección del usuario para la estación de origen
-read -p "		Introduce el número de la estación de destino: " destination_index
+read -p "Introduce el número de la estación de destino: " destination_index
 destination_code=$(jq -r ".stations[$((destination_index - 1))].code" "$stations_file")
 destination_name=$(jq -r ".stations[$((destination_index - 1))].name" "$stations_file")
 
 # Verificar si la selección es válida
 if [ -z "$destination_code" ]; then
-	echo "		Selección inválida para la estación de destino."
+	echo "Selección inválida para la estación de destino."
 	exit 1
 fi
 
-echo "		Estación de destino seleccionada: $destination_name"
+echo "Estación de destino seleccionada: $destination_name"
 echo
 
 # Construir la URL de consulta
