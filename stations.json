@@ -1,7 +1,22 @@
 {
 	"stations": [
+	  {"code": "ABA", "name": "Abando"},
+	  {"code": "ABT", "name": "Abatxolo"},
+	  {"code": "AIB", "name": "Aiboa"},
+	  {"code": "ALG", "name": "Algorta"},
+	  {"code": "ANS", "name": "Ansio"},
+	  {"code": "ARE", "name": "Areeta"},
+	  {"code": "ARZ", "name": "Ariz"},
+	  {"code": "AST", "name": "Astrabudua"},
+	  {"code": "BAG", "name": "Bagatza"},
+	  {"code": "BAR", "name": "Barakaldo"},
+	  {"code": "BAS", "name": "Basarrate"},
+	  {"code": "BSR", "name": "Basauri"},
+	  {"code": "BER", "name": "Berango"},
+	  {"code": "BID", "name": "Bidezabal"},
+	  {"code": "BOL", "name": "Bolueta"},
+
 	  {"code": "SIN", "name": "San Ignazio"},
-	  {"code": "URD", "name": "Urduliz"},
-	  {"code": "BAR", "name": "Barakaldo"}
+	  {"code": "URD", "name": "Urduliz"}
 	]
   }
