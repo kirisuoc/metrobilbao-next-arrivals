@@ -1,4 +1,4 @@
-metrobilbaotimetable is a little script that shows the timetable and next trains in the terminal.
+metrobilbaotimetable is a little script that shows next trains timetable of Metro Bilbao in the terminal.
 Version in Bash and Python.
 
 <img width="283" alt="metrosh" src="https://github.com/user-attachments/assets/f6f9534e-0f32-4c7b-9116-d27427705de0">
