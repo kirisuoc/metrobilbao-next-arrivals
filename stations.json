@@ -1,0 +1,7 @@
+{
+	"stations": [
+	  {"code": "SIN", "name": "San Ignazio"},
+	  {"code": "URD", "name": "Urduliz"},
+	  {"code": "BAR", "name": "Barakaldo"}
+	]
+  }
