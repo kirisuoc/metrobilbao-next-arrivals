@@ -44,8 +44,6 @@ echo
 
 # Construir la URL de consulta
 url="https://api.metrobilbao.eus/metro/real-time/${origin_code}/${destination_code}"
-echo "La URL generada es: $url"
-
 json=$(curl -s "$url")
 
 #! {"co2Metro":{"co2metro":"35","co2Car":"183.69","co2DistanceMetro":614.565,"co2DistanceCar":3665.16657,"diffRaw":3050.60157,"diff":"3.050,60","metroDistance":17.559,"googleDistance":19.953},"trains":[{"wagons":5,"estimated":1,"direction":"Plentzia","time":"2024-12-03T14:22:49","timeRounded":"14:23"}],"messages":[],"trip":{"fromStation":{"code":"SIN","name":"San Ignazio"},"toStation":{"code":"URD","name":"Urduliz"},"duration":29,"line":"L1","transfer":false},"exits":{"origin":[{"id":92,"name":"Ascensor Av. Lehendakari Agirre, 170 (salida Pza Levante)","elevator":true,"nocturnal":true,"latitude":"43.28137","longitude":"-2.96265","issues":[]},{"id":93,"name":"Asturias Av. Lehendakari Agirre, 179, esq C\/Asturias","elevator":false,"nocturnal":true,"latitude":"43.28147","longitude":"-2.96300","issues":[]},{"id":94,"name":"Benita Asas Av. Lehendakari Agirre, 167, esq C\/Benita Asas","elevator":false,"nocturnal":false,"latitude":"43.27993","longitude":"-2.96214","issues":[]},{"id":95,"name":"Lekeitio Av. Lehendakari Agirre, 162, esq C\/Lekeitio","elevator":false,"nocturnal":false,"latitude":"43.28002","longitude":"-2.96187","issues":[]},{"id":96,"name":"Levante Pza. Levante, 2","elevator":false,"nocturnal":false,"latitude":"43.28144","longitude":"-2.96246","issues":[]}],"destiny":[{"id":127,"name":"Urduliz C\/ Gobela, 2","elevator":true,"nocturnal":true,"latitude":"43.37865","longitude":"-2.95905","issues":[]}]}}
