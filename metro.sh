@@ -58,7 +58,7 @@ echo "----------------------------------------------"
 printf "| %-12s | %-12s |\n" "From" "$from_station_name"
 printf "| %-12s | %-12s |\n" "To" "$to_station_name"
 echo "----------------------------------------------"
-printf "| %-12s | %-12s | %-12s |\n" "Direction" "Hour" "Estimated"
+printf "| %-12s | %-12s | %-12s |\n" "Direction" "Time" "Estimated"
 echo "----------------------------------------------"
 
 # Extraer los horarios por dirección

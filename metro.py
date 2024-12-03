@@ -40,4 +40,4 @@ trains = data["trains"]
 # Mostrar los datos en formato tabular
 print(f"De: {from_station} A: {to_station}\n")
 table = [[train["direction"], train["time"].split("T")[1][:5], train["estimated"]] for train in trains]
-print(tabulate(table, headers=["Direction", "Hour", "Estimated"], tablefmt="grid"))
+print(tabulate(table, headers=["Direction", "Time", "Estimated"], tablefmt="grid"))
