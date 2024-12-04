@@ -6,4 +6,7 @@ Bash:
 Python:
 <img width="236" alt="metropy" src="https://github.com/user-attachments/assets/7130664b-28e0-40fe-9489-216dc791c4ea">
 
-Contibutors: @E10YDEV, @kirisuoc @maiferna
+Contibutors:  
+[@E10YDEV](https://github.com/E10YDEV)
+[@kirisuoc](https://github.com/kirisuoc)
+[@maiferna](https://github.com/maiferna)
