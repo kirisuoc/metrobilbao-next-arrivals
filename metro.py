@@ -1,5 +1,8 @@
 import json
 import requests
+import sys
+sys.path.append('./tabulate')
+
 from tabulate import tabulate
 
 # Cargar el archivo JSON con las estaciones
