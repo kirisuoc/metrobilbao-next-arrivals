@@ -1,6 +1,5 @@
 import json
 from colorama import Fore, Style
-import requests
 import sys
 sys.path.append('./tabulate')
 
