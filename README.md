@@ -43,7 +43,7 @@ pip install requests rich
 ### Clone the Repository
 ```bash
 git clone https://github.com/kirisuoc/metrobilbao-now/
-cd metro-bilbao-cli
+cd metrobilbao-now
 ```
 
 ### Run the Application
