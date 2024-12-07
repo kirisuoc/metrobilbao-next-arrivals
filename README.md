@@ -1,3 +1,4 @@
+![1](https://github.com/user-attachments/assets/45c6c02e-88b9-4b8d-8c66-206488175237)
 
 # Metro Bilbao CLI Schedule Application
 
@@ -35,7 +36,7 @@ pip install requests rich
 ## How to Use
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/metro-bilbao-cli.git
+git clone https://github.com/kirisuoc/metrobilbao-now/
 cd metro-bilbao-cli
 ```
 
@@ -97,6 +98,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 ## Author
-Developed by [Your Name].
+Developed by [E10Y] [kirisuoc].
 
-For any issues or suggestions, please open a GitHub issue or contact me at [your email].
+For any issues or suggestions, please open a GitHub issue.
