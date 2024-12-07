@@ -4,7 +4,13 @@
 
 This is a Command-Line Interface (CLI) application to check train schedules for the Metro Bilbao system. The application provides a user-friendly interface with interactive menus, allowing you to select origin and destination stations, view real-time train schedules, and configure default trips.
 
-The interface is enhanced using the `rich` library for better visualization and aesthetics.
+The interface is enhanced using the `rich` library for better visualization.
+
+> [!WARNING]
+> This application is **NOT OFFICIAL** and is developed for educational purposes only. 
+> The developers are not responsible for any misuse of this application. 
+> The API used belongs to Metro Bilbao.
+> 
 
 ---
 
