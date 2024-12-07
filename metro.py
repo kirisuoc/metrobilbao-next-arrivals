@@ -1,24 +1,30 @@
 import json
-from colorama import Fore, Style
-import sys
-sys.path.append('./tabulate')
+import requests
+import os
+from rich.console import Console
+from rich.table import Table
+from rich.prompt import Prompt, IntPrompt
+from rich.panel import Panel
+from rich.align import Align
 
-from tabulate import tabulate
+console = Console()
 
-# Cargar el archivo JSON con las estaciones
-# E: Recuerda que en este caso al usar With si te sirve pero si hacer un open normal hacer close igual que en C
+# Función para limpiar la terminal
+def clear_terminal():
+    os.system("cls" if os.name == "nt" else "clear")
 
+# Cargar estaciones del archivo JSON
 def load_data():
     with open("stations.json", "r") as file:
         stations = json.load(file)["stations"]
     return stations
 
-def set_data_default(origin,dest):
+def set_data_default(origin, dest):
     with open("stations.json", "r") as file:
         data = json.load(file)
     
-        data["default_origin"] = origin
-        data["default_dest"] = dest
+    data["default_origin"] = origin
+    data["default_dest"] = dest
     
     with open("stations.json", "w") as file:
         json.dump(data, file, indent=4)
@@ -29,12 +35,12 @@ def load_data_default():
         origin = data["default_origin"]
         dest = data["default_dest"]
         if not origin or not dest:
-            origin,dest = set_station()
-            set_data_default(origin,dest)
-        return (origin, dest)
+            origin, dest = set_station()
+            set_data_default(origin, dest)
+        return origin, dest
 
-
-def fetch_data(origin,destination):
+def fetch_data(origin, destination):
+    clear_terminal()
     url = f"https://api.metrobilbao.eus/metro/real-time/{origin['code']}/{destination['code']}"
     response = requests.get(url)
     data = response.json()
@@ -44,82 +50,84 @@ def fetch_data(origin,destination):
     to_station = data["trip"]["toStation"]["name"]
     trains = data["trains"]
 
-    # Mostrar los datos en formato tabular
-    print(f"De: {from_station} A: {to_station}\n")
-    table = [[train["direction"], train["time"].split("T")[1][:5], train["estimated"]] for train in trains]
-    print(tabulate(table, headers=["Direction", "Time", "Estimated"], tablefmt="grid"))
-    input("\nPress ENTER to continue...")
+    # Mostrar datos en tabla
+    console.print(Panel(f"[bold green]From:[/bold green] {from_station} [bold green]To:[/bold green] {to_station}"))
+    table = Table(title="Train Schedule")
+    table.add_column("Direction", justify="center", style="cyan")
+    table.add_column("Time", justify="center", style="magenta")
+    table.add_column("Estimated", justify="center", style="yellow")
+
+    for train in trains:
+        table.add_row(train["direction"], train["time"].split("T")[1][:5], str(train["estimated"]))
+
+    console.print(table)
+    console.input("\n[bold blue]Press ENTER to continue...[/bold blue]")
     main()
 
 def set_station():
+    clear_terminal()
     stations = load_data()
-    # Mostrar la lista de estaciones
-    print("Selecciona la estación de origen:")
+    # Mostrar lista de estaciones
+    console.print(Panel("[bold green]Select origin station:[/bold green]"))
     for i, station in enumerate(stations, start=1):
-        print(f"{i}. {station['name']}")
+        console.print(f"[bold blue]{i}[/bold blue]. {station['name']}")
 
-    # Leer la selección del usuario
-    origin_index = int(input("Introduce el número de la estación de origen: ")) - 1
+    origin_index = IntPrompt.ask("[bold yellow]Enter the number of the origin station:[/bold yellow]") - 1
     origin = stations[origin_index]
 
-    print(f"Estación de origen seleccionada: {origin['name']}\n")
+    console.print(f"[bold green]Selected origin station:[/bold green] {origin['name']}")
 
-    # Mostrar la lista de estaciones para el destino
-    print("Selecciona la estación de destino:")
+    console.print(Panel("[bold green]Select destination station:[/bold green]"))
     for i, station in enumerate(stations, start=1):
-        print(f"{i}. {station['name']}")
+        console.print(f"[bold blue]{i}[/bold blue]. {station['name']}")
 
-    destination_index = int(input("Introduce el número de la estación de destino: ")) - 1
+    destination_index = IntPrompt.ask("[bold yellow]Enter the number of the destination station:[/bold yellow]") - 1
     destination = stations[destination_index]
 
-    print(f"Estación de destino seleccionada: {destination['name']}\n")
-    return origin,destination
-
+    console.print(f"[bold green]Selected destination station:[/bold green] {destination['name']}")
+    return origin, destination
 
 def travel_now():
-    origin,destination = set_station()
-    fetch_data(origin,destination)
-
+    origin, destination = set_station()
+    fetch_data(origin, destination)
 
 def default_trip():
-    origin,dest = load_data_default()
+    origin, dest = load_data_default()
     fetch_data(origin, dest)
-    
 
 def show_logo():
-    print(Style.BRIGHT + """
+    clear_terminal()
+    logo = """
  __  __      _                 ____  _ _ _                 
 |  \/  | ___| |_ _ __ ___     | __ )(_) | |__   __ _  ___  
 | |\/| |/ _ \ __| '__/ _ \ ___|  _ \| | | '_ \ / _` |/ _ \ 
 | |  | |  __/ |_| | | (_) |___| |_) | | | |_) | (_| | (_) |
 |_|  |_|\___|\__|_|  \___/    |____/|_|_|_.__/ \__,_|\___/ 
-    """ + Style.RESET_ALL)
-    print("╔═══════════════════════════════════════════════════════╗")
-    print("║             << Time Table Metro Bilbao >>             ║" )
-    print("╚═══════════════════════════════════════════════════════╝")
+    """
+    console.print(Align.center(Panel(logo, title="Metro Bilbao", style="bold magenta")))
 
 def show_menu():
-    print("1 - Travel now.")
-    print("2 - Default trip.")
-    print("3 - Settings.")
-    print("4 - Exit.")
-    option = input("Select an option: ")
-
-    if option == "1":
-        travel_now()
-    elif option == "2":
-        default_trip()
-    elif option == "3":
-        print("Haz c")
-    else:
-        print(Fore.RED + Style.BRIGHT + "\nError: No valid option!!!\n" + Style.RESET_ALL)
-        show_menu()
-
-
-
-#E: Es muy buena practica decirle donde arrancar
-def main():
+    clear_terminal()
     show_logo()
+    console.print(Panel("[bold yellow]1 - Travel Now.\n2 - Default Trip.\n3 - Settings.\n4 - Exit.[/bold yellow]"))
+    option = IntPrompt.ask("[bold cyan]Select an option:[/bold cyan]")
+
+    if option == 1:
+        travel_now()
+    elif option == 2:
+        default_trip()
+    elif option == 3:
+        console.print("[bold red]TO DO.[/bold red]")
+        console.input("\n[bold blue]Press ENTER to return to the menu...[/bold blue]")
+    elif option == 4:
+        console.print("[bold green]Goodbye![/bold green]")
+        exit()
+    else:
+        console.print("[bold red]\nError: Invalid option!!!\n[/bold red]")
+        console.input("\n[bold blue]Press ENTER to return to the menu...[/bold blue]")
+    main()
+
+def main():
     show_menu()
 
 if __name__ == "__main__":
