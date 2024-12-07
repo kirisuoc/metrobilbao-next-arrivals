@@ -73,6 +73,12 @@
             "name": "Urduliz"
         }
     ],
-    "default_origin": null,
-    "default_dest": null
+    "default_origin": {
+        "code": "ABA",
+        "name": "Abando"
+    },
+    "default_dest": {
+        "code": "BAG",
+        "name": "Bagatza"
+    }
 }
