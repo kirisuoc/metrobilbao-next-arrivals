@@ -11,7 +11,7 @@ console = Console()
 
 # Función para limpiar la terminal
 def clear_terminal():
-    os.system("cls" if os.name == "nt" else "clear")
+    os.system("cls" if os.name == "nt" else "clear && printf '\033c'")
 
 # Cargar estaciones del archivo JSON
 def load_data():
@@ -22,10 +22,10 @@ def load_data():
 def set_data_default(origin, dest):
     with open("stations.json", "r") as file:
         data = json.load(file)
-    
+
     data["default_origin"] = origin
     data["default_dest"] = dest
-    
+
     with open("stations.json", "w") as file:
         json.dump(data, file, indent=4)
 
@@ -75,6 +75,7 @@ def set_station():
     origin_index = IntPrompt.ask("[bold yellow]Enter the number of the origin station:[/bold yellow]") - 1
     origin = stations[origin_index]
 
+    clear_terminal()
     console.print(f"[bold green]Selected origin station:[/bold green] {origin['name']}")
 
     console.print(Panel("[bold green]Select destination station:[/bold green]"))
@@ -98,11 +99,11 @@ def default_trip():
 def show_logo():
     clear_terminal()
     logo = """
- __  __      _                 ____  _ _ _                 
-|  \/  | ___| |_ _ __ ___     | __ )(_) | |__   __ _  ___  
-| |\/| |/ _ \ __| '__/ _ \ ___|  _ \| | | '_ \ / _` |/ _ \ 
+ __  __      _                 ____  _ _ _
+|  \/  | ___| |_ _ __ ___     | __ )(_) | |__   __ _  ___
+| |\/| |/ _ \ __| '__/ _ \ ___|  _ \| | | '_ \ / _` |/ _ \
 | |  | |  __/ |_| | | (_) |___| |_) | | | |_) | (_| | (_) |
-|_|  |_|\___|\__|_|  \___/    |____/|_|_|_.__/ \__,_|\___/ 
+|_|  |_|\___|\__|_|  \___/    |____/|_|_|_.__/ \__,_|\___/
     """
     console.print(Align.center(Panel(logo, title="Metro Bilbao", style="bold magenta")))
 
