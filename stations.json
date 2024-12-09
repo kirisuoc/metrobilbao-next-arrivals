@@ -61,24 +61,114 @@
             "name": "Bolueta"
         },
         {
-            "code": "SES",
-            "name": "Sestao"
+            "code": "DEU",
+            "name": "Deustu"
+        },
+        {
+            "code": "ERA",
+            "name": "Erandio"
+        },
+        {
+            "code": "ETX",
+            "name": "Etxebarri"
+        },
+        {
+            "code": "GOB",
+            "name": "Gobela"
+        },
+        {
+            "code": "GUR",
+            "name": "Gurutzeta/Cruces"
+        },
+        {
+            "code": "IBB",
+            "name": "Ibarbengoa"
+        },
+        {
+            "code": "IND",
+            "name": "Indautxu"
+        },
+        {
+            "code": "KAB",
+            "name": "Kabiezes"
+        },
+        {
+            "code": "LAM",
+            "name": "Lamiako"
+        },
+        {
+            "code": "LAR",
+            "name": "Larrabasterra"
+        },
+        {
+            "code": "LEI",
+            "name": "Leioa"
+        },
+        {
+            "code": "LUT",
+            "name": "Lutxana"
+        },
+        {
+            "code": "MOY",
+            "name": "Moyua"
+        },
+        {
+            "code": "NEG",
+            "name": "Neguri"
+        },
+        {
+            "code": "PEN",
+            "name": "Peñota"
+        },
+        {
+            "code": "PLE",
+            "name": "Plentzia"
+        },
+        {
+            "code": "POR",
+            "name": "Portugalete"
         },
         {
             "code": "SIN",
             "name": "San Ignazio"
         },
         {
+            "code": "SAM",
+            "name": "Santimami/San Mamés"
+        },
+        {
+            "code": "STZ",
+            "name": "Santurtzi"
+        },
+        {
+            "code": "SAN",
+            "name": "Santutxu"
+        },
+        {
+            "code": "SAR",
+            "name": "Sarriko"
+        },
+        {
+            "code": "SES",
+            "name": "Sestao"
+        },
+        {
+            "code": "SOP",
+            "name": "Sopela"
+        },
+        {
+            "code": "URB",
+            "name": "Urbinaga"
+        },
+        {
             "code": "URD",
             "name": "Urduliz"
+        },
+        {
+            "code": "CAV",
+            "name": "Zazpikaleak/Casco Viejo"
         }
     ],
-    "default_origin": {
-        "code": "ABA",
-        "name": "Abando"
-    },
-    "default_dest": {
-        "code": "BAG",
-        "name": "Bagatza"
-    }
+    "default_origin": null,
+    "default_dest": null
 }
