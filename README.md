@@ -42,8 +42,7 @@ pip install requests rich
 ## How to Use
 ### Clone the Repository
 ```bash
-git clone https://github.com/kirisuoc/metrobilbao-now/
-cd metrobilbao-now
+git clone https://github.com/kirisuoc/metrobilbao-now/ && cd metrobilbao-now
 ```
 
 ### Run the Application
