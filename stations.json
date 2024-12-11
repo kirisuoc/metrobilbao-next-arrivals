@@ -78,7 +78,7 @@
         },
         {
             "code": "GUR",
-            "name": "Gurutzeta/Cruces"
+            "name": "Cruces"
         },
         {
             "code": "IBB",
@@ -118,7 +118,7 @@
         },
         {
             "code": "PEN",
-            "name": "Peñota"
+            "name": "Pe\u00f1ota"
         },
         {
             "code": "PLE",
@@ -134,7 +134,7 @@
         },
         {
             "code": "SAM",
-            "name": "Santimami/San Mamés"
+            "name": "San Mam\u00e9s"
         },
         {
             "code": "STZ",
@@ -166,9 +166,16 @@
         },
         {
             "code": "CAV",
-            "name": "Zazpikaleak/Casco Viejo"
+            "name": "Casco Viejo"
         }
     ],
-    "default_origin": null,
-    "default_dest": null
+    "default_origin": {
+        "code": "ARE",
+        "name": "Areeta"
+    },
+    "default_dest": {
+        "code": "BAG",
+        "name": "Bagatza"
+    },
+    "default_start": true
 }
