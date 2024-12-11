@@ -48,7 +48,7 @@ git clone https://github.com/kirisuoc/metrobilbao-now/ && cd metrobilbao-now
 ### Run the Application
 Execute the application with:
 ```bash
-python metro_bilbao_schedule.py
+python metro_bilbao.py
 ```
 
 ---
