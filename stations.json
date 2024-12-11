@@ -169,13 +169,7 @@
             "name": "Casco Viejo"
         }
     ],
-    "default_origin": {
-        "code": "ARE",
-        "name": "Areeta"
-    },
-    "default_dest": {
-        "code": "BAG",
-        "name": "Bagatza"
-    },
+    "default_origin": null,
+    "default_dest": null,
     "default_start": true
 }
