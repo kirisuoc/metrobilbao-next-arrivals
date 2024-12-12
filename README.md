@@ -103,6 +103,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 ## Author
-Developed by [E10Y] [kirisuoc].
+Developed by [E10Y](https://github.com/E10Y) and [kirisuoc](https://github.com/kirisuoc).
 
 For any issues or suggestions, please open a GitHub issue.
