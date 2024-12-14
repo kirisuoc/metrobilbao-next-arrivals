@@ -34,9 +34,43 @@ Required Python libraries:
 
 Install the required libraries with:
 ```bash
-pip install requests rich
+pip install -r requirements.txt
 ```
 
+### Optional: Install Required Libraries in a Virtual Environment
+
+If you'd like to isolate your project dependencies, you can create and use a virtual environment. Follow these steps:
+
+1. **Create a virtual environment:**
+   ```bash
+   python3 -m venv venv
+2. **Activate the virtual environment:**
+
+   - **On Windows:**
+     ```bash
+     .\venv\Scripts\activate
+     ```
+
+   - **On macOS/Linux:**
+     ```bash
+     source venv/bin/activate
+     ```
+
+3. **Install the required libraries:**
+   With the virtual environment active, run:
+   ```bash
+   pip install -r requirements.txt
+4. **Run the Application (see "Run the Application")**
+
+6. **Deactivate the virtual environment when you're done:**
+   ```bash
+   deactivate
+   ```
+
+
+```
+deactivate
+```
 ---
 
 ## How to Use
