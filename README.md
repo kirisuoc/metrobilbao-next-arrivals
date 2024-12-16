@@ -114,8 +114,8 @@ When you run the application, you'll see a menu like this:
 
 ---
 
-![Menu](https://github.com/user-attachments/assets/810fb38e-fd4c-48cc-9835-0dfca3fd3a99)
 ## Example Usage
+![Menu](https://github.com/user-attachments/assets/810fb38e-fd4c-48cc-9835-0dfca3fd3a99)
 ### Travel Now
 1. Select `1 - Travel Now`.
 2. Choose your origin and destination stations from the interactive list.
