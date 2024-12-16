@@ -38,7 +38,7 @@ def load_data_default():
             origin, dest = set_station()
             set_data_default(origin, dest)
         return origin, dest
-    
+
 def reset_data_default():
     set_data_default(None, None)
 
@@ -96,7 +96,7 @@ def set_station():
     console.print(f"[bold green]Selected origin station:[/bold green] {origin['name']}")
 
     console.print(Panel("[bold green]Select destination station:[/bold green]"))
-    
+
     for i in range(half):
         col1 = ""
         col2 = ""
@@ -172,7 +172,7 @@ def show_logo():
     logo = """
  __  __      _                 ____  _ _ _
 |  \/  | ___| |_ _ __ ___     | __ )(_) | |__   __ _  ___
-| |\/| |/ _ \ __| '__/ _ \ ___|  _ \| | | '_ \ / _` |/ _ \
+| |\/| |/ _ \ __| '__/ _ \ ___|  _ \| | | '_ \ / _` |/ _ \\
 | |  | |  __/ |_| | | (_) |___| |_) | | | |_) | (_| | (_) |
 |_|  |_|\___|\__|_|  \___/    |____/|_|_|_.__/ \__,_|\___/
     """
@@ -201,7 +201,7 @@ def show_menu():
 def main():
     with open("stations.json", "r") as file:
         data = json.load(file)
-    
+
     if data["default_start"]:
         default_trip()
     else:
