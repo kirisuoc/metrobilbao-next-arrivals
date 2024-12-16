@@ -114,15 +114,20 @@ When you run the application, you'll see a menu like this:
 
 ---
 
+![Menu](https://github.com/user-attachments/assets/810fb38e-fd4c-48cc-9835-0dfca3fd3a99)
 ## Example Usage
 ### Travel Now
 1. Select `1 - Travel Now`.
 2. Choose your origin and destination stations from the interactive list.
 3. View the real-time train schedule in a neatly formatted table.
 
+![Travel-now](https://github.com/user-attachments/assets/f9c5907d-4f66-4496-a4fb-38763dbf20e2)
+
 ### Default Trip
 1. Set your default stations in the **Settings** menu.
-2. Select `2 - Default Trip` for instant schedule access.
+![Settings](https://github.com/user-attachments/assets/a76ddc80-c892-43d3-96d6-5cb05a6d070d)
+
+3. Select `2 - Default Trip` for instant schedule access.
 
 ---
 
